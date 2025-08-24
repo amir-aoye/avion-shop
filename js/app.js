@@ -31,7 +31,12 @@ mobileSearchIcon.addEventListener("click", () =>
   openOrCloseSearch(mobileSearchWrapper, mobileSearchInput)
 );
 mobileSearchIcon.addEventListener("click", () =>
-  showSearchResult(searchInput, mobileSearchWrapper, mobileSearchInput, "pages/")
+  showSearchResult(
+    searchInput,
+    mobileSearchWrapper,
+    mobileSearchInput,
+    "pages/"
+  )
 );
 
 const mobileResultList = document.querySelector(".mobile-result-list");

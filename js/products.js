@@ -31,7 +31,12 @@ mobileSearchIcon.addEventListener("click", () =>
   openOrCloseSearch(mobileSearchWrapper, mobileSearchInput)
 );
 mobileSearchIcon.addEventListener("click", () =>
-  showSearchResult(searchInput, mobileSearchWrapper, mobileSearchInput, "../../pages/")
+  showSearchResult(
+    searchInput,
+    mobileSearchWrapper,
+    mobileSearchInput,
+    "../../pages/"
+  )
 );
 
 const mobileResultList = document.querySelector(".mobile-result-list");
@@ -77,9 +82,7 @@ const setFilteredProducts = (filters) => {
   for (let filter in filters) {
     switch (filter) {
       case "type": {
-        if (filters[filter] === "all products") {
-          filteredProducts = [...products];
-        } else {
+        if (filters[filter] !== "all products") {
           filteredProducts = filteredProducts.filter((product) =>
             product.type.toLowerCase().includes(filters[filter])
           );
