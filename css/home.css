@@ -1,0 +1,457 @@
+/*
+
+ -- App Styles --
+
+*/
+
+.scrollbar {
+    background-color: rgb(183, 183, 192);
+    width: 100%;
+    height: 4px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 102;
+}
+
+.scrolled {
+    background-color: #3e2f9b;
+    width: 0;
+    height: 100%;
+}
+
+/*
+
+==========
+  Header
+==========
+
+*/
+
+.header-content-mobile {
+    color: var(--dark-primary);
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    padding: 36px 20px 26px 20px;
+}
+
+.header-content-mobile__title {
+    font-size: 28px;
+}
+
+.header-content-mobile__link {
+    width: 100%;
+    margin-top: 14px;
+}
+
+.header-content-mobile__link,
+.header-content__link,
+.products__link,
+.idea-content__link {
+    background-color: var(--light-gray);
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+    transition: all 100ms ease-out;
+}
+
+.header-content-mobile__link:hover,
+.header-content__link:hover,
+.products__link:hover,
+.idea-content__link:hover {
+    transform: scale(1.05);
+}
+
+.hero-block {
+    max-width: 1500px;
+    height: 704px;
+    background: url("../assets/images/hero-blocks.jpg") no-repeat center;
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+}
+
+.header-content {
+    background-color: var(--white);
+    color: var(--dark-primary);
+    width: 600px;
+    height: 400px;
+    box-shadow: rgba(3, 1, 27, 0.18) 0px 2px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 95px;
+    top: 175px;
+    padding: 38px;
+}
+
+.header-content__title {
+    font-family: "Clash Display";
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+.header-content__desc {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.header-content__link {
+    width: 170px;
+}
+
+/*
+
+========
+  Main
+========
+
+*/
+
+.brand {
+    color: var(--dark-primary);
+    margin: 70px 0;
+}
+
+.brand__title {
+    font-family: "Clash Display";
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.brand-differences {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    gap: 14px;
+}
+
+.brand-difference {
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: rgba(0, 1, 41, 0.45) 0px 25px 20px -20px;
+    padding: 32px;
+}
+
+.brand-difference__title {
+    font-family: "Clash Display";
+    font-size: 18px;
+}
+
+.products {
+    margin-bottom: 70px;
+}
+
+.products__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(258px, auto));
+    column-gap: 18px;
+    row-gap: 4px;
+    justify-content: center;
+}
+
+.product {
+    min-height: 400px;
+    max-height: 560px;
+    color: var(--dark-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product__img {
+    height: 80%;
+    cursor: pointer;
+    transition: all 400ms 50ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.product__img:hover {
+    transform: scale(1.04) rotate(0.8deg);
+}
+
+.product__title {
+    font-family: "Clash Display";
+}
+
+.products__link {
+    color: var(--dark-primary);
+    width: 170px;
+    display: block;
+    margin: 16px auto 0 auto;
+}
+
+.idea {
+    margin-bottom: 70px;
+}
+
+.idea__wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
+.idea-content {
+    background-color: var(--dark-primary);
+    color: var(--white);
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.idea-content__title {
+    font-family: "Clash Display";
+    font-size: 32px;
+    margin-bottom: 14px;
+}
+
+.idea-content__desc {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.idea-content__link {
+    background-color: rgba(249, 249, 249, 15%);
+    width: 170px;
+}
+
+.idea__img {
+    flex-basis: 50%;
+}
+
+.club {
+    color: var(--white);
+    max-width: 1500px;
+    min-height: 444px;
+    background: url("../assets/images/email-image.png") no-repeat center;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+    margin: 0 auto;
+}
+
+.club__title {
+    font-family: "Clash Display";
+    font-size: 32px;
+}
+
+.club__desc {
+    font-size: 18px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.club__benefits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.email-sign-up {
+    width: 472px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#email-sign-up-input {
+    color: var(--dark-primary);
+    padding: 20px;
+    width: 80%;
+    caret-color: rgba(0, 0, 0, 0);
+}
+
+#email-sign-up-input::placeholder {
+    font-family: "Clash Display";
+    color: var(--dark-primary);
+    opacity: 20%;
+}
+
+.email-sign-up__btn {
+    color: inherit;
+    background-color: var(--dark-primary);
+    width: 20%;
+    padding: 20px;
+    cursor: pointer;
+}
+
+/*
+
+ -- Responsive --
+
+*/
+
+@media screen and (max-width: 1199px) {
+    .idea-content__title {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header-content {
+        width: 550px;
+        height: 350px;
+        padding: 26px;
+
+        .header-content__title {
+            font-size: 26px;
+        }
+    }
+
+    .idea-content {
+        padding: 20px;
+    }
+
+    .idea-content__title {
+        font-size: 26px;
+    }
+
+    .idea-content__desc {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-content {
+        width: 500px;
+        height: 300px;
+        padding: 20px;
+        right: 45px;
+        top: 230px;
+
+        .header-content__title {
+            font-size: 20px;
+        }
+    }
+
+    .idea-content {
+        padding: 16px;
+    }
+
+    .idea-content__title {
+        font-size: 18px;
+        margin-bottom: 4px;
+    }
+
+    .idea-content__desc {
+        font-size: 12px;
+    }
+
+    .idea-content__link {
+        font-size: 14px;
+        width: 120px;
+        height: 46px;
+        line-height: 46px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .header-content-mobile {
+        display: flex;
+    }
+
+    .hero-block {
+        height: 304px;
+    }
+
+    .header-content {
+        display: none;
+    }
+
+    .brand__title {
+        font-size: 22px;
+        text-align: start;
+    }
+
+    .brand-difference {
+        padding: 18px;
+    }
+
+    .products__wrapper {
+        justify-content: stretch;
+        align-items: center;
+        row-gap: 16px;
+    }
+
+    .product {
+        max-height: none;
+    }
+
+    .products__link {
+        width: 100%;
+    }
+
+    .idea__wrapper {
+        flex-direction: column;
+        height: 800px;
+    }
+
+    .idea-content {
+        padding: 40px;
+    }
+
+    .idea-content__title {
+        font-size: 26px;
+        margin-bottom: 8px;
+    }
+
+    .idea-content__desc {
+        font-size: 16px;
+    }
+
+    .idea-content__link {
+        width: 100%;
+    }
+
+    .club {
+        min-height: 420px;
+        text-align: start;
+        gap: 24px;
+        padding: 26px 16px;
+    }
+
+    .club__desc {
+        margin: 0;
+    }
+
+    .club__benefits {
+        flex-direction: column;
+        align-items: start;
+        gap: 14px;
+    }
+
+    .email-sign-up {
+        margin: 0;
+        width: 100%;
+    }
+
+    #email-sign-up-input {
+        width: 70%;
+    }
+
+    .email-sign-up__btn {
+        font-size: 12px;
+        width: 30%;
+    }
+
+    #email-sign-up-input,
+    .email-sign-up__btn {
+        padding: 16px;
+    }
+}

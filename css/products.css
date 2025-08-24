@@ -1,0 +1,349 @@
+/*
+
+ -- App Styles --
+
+*/
+
+.scrollbar {
+    background-color: rgb(183, 183, 192);
+    width: 100%;
+    height: 4px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 102;
+}
+
+.scrolled {
+    background-color: #3e2f9b;
+    width: 0;
+    height: 100%;
+}
+
+/*
+
+==========
+  Header
+==========
+
+*/
+
+.header__bottom {
+    max-width: 1500px;
+    height: 209px;
+    background: url("../assets/images/page-header.png") no-repeat;
+    margin: 0 auto;
+}
+
+/*
+
+========
+  Main
+========
+
+*/
+
+.categories {
+    color: var(--dark-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 44px 26px;
+}
+
+.filters {
+    font-family: inherit;
+    font-size: 18px;
+    background-color: var(--light-gray);
+    color: inherit;
+    width: 28%;
+    height: 56px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    padding: 6px;
+    cursor: pointer;
+    transition: all 200ms ease-in;
+
+    svg {
+        width: 16px;
+        height: 16px;
+        transition: all 200ms ease-in;
+    }
+}
+
+.filters:hover {
+    background-color: #CAC6DA;
+}
+
+.filters--open {
+    svg {
+        transform: rotate(180deg);
+    }
+
+    .filters__submenu {
+        opacity: 1;
+        height: 524px;
+    }
+}
+
+.filters__submenu {
+    background-color: #4E4D93;
+    color: var(--white);
+    height: 0;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    position: absolute;
+    right: -16px;
+    left: 0;
+    top: 100%;
+    transition: all 150ms ease-in;
+    overflow: hidden;
+    opacity: 0;
+    z-index: 90;
+}
+
+.product-type,
+.price {
+    width: 100%;
+}
+
+.product-type__title,
+.price__title {
+    font-family: "Clash Display";
+    font-size: 18px;
+    text-align: left;
+    padding: 10px;
+}
+
+.product-type-menu__label,
+.price-menu__label {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 200ms ease-in;
+}
+
+.product-type-menu__label:hover,
+.price-menu__label:hover,
+option:hover {
+    background-color: var(--dark-primary);
+}
+
+.type-menu-input,
+.price-menu-input {
+    display: none;
+}
+
+.type-menu-input:checked~.product-type-menu__name {
+    font-weight: bold;
+}
+
+.type-menu-input:checked~.product-type-menu__checkmark::after {
+    content: "☑️";
+}
+
+.price-menu-input:checked~.price-menu__name {
+    font-weight: bold;
+}
+
+.price-menu-input:checked~.price-menu__checkmark::after {
+    content: "☑️";
+}
+
+.product-type-menu__checkmark::after,
+.price-menu__checkmark::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#sorting-select,
+::picker(select) {
+    appearance: base-select;
+    border: none;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#sorting-select {
+    background-color: var(--light-gray);
+    color: var(--dark-primary);
+    width: 28%;
+    height: 56px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    transition: all 200ms ease-in;
+}
+
+#sorting-select:hover {
+    background-color: #CAC6DA;
+}
+
+#sorting-select::picker-icon {
+    font-size: 12px;
+    color: var(--dark-primary);
+    margin-left: 0;
+    transition: all 200ms ease-in;
+}
+
+#sorting-select:open::picker-icon {
+    transform: rotate(180deg);
+}
+
+option {
+    color: var(--white);
+    background-color: #4E4D93;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    transition: all 200ms ease-in;
+}
+
+option:checked {
+    font-weight: bold;
+}
+
+option::checkmark {
+    order: 1;
+    margin-left: auto;
+    content: "☑️";
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(258px, auto));
+    column-gap: 18px;
+    row-gap: 4px;
+    justify-content: center;
+}
+
+.products__note {
+    color: var(--dark-primary);
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 6px;
+}
+
+.product {
+    min-height: 400px;
+    max-height: 560px;
+    color: var(--dark-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product__img {
+    height: 80%;
+    cursor: pointer;
+    transition: all 400ms 50ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.product__img:hover {
+    transform: scale(1.04) rotate(0.8deg);
+}
+
+.product__title {
+    font-family: "Clash Display";
+}
+
+.products__link {
+    background-color: var(--light-gray);
+    color: var(--dark-primary);
+    width: 170px;
+    height: 56px;
+    display: block;
+    line-height: 56px;
+    text-align: center;
+    margin: 32px auto 32px auto;
+    transition: all 100ms ease-out;
+}
+
+.products__link:hover {
+    transform: scale(1.05);
+}
+
+/*
+
+ -- Responsive --
+
+*/
+
+@media screen and (max-width: 768px) {
+    .filters--open {
+        .filters__submenu {
+            height: 460px;
+        }
+    }
+
+    .filters__submenu {
+        right: -30px;
+    }
+
+    .product-type-menu__name,
+    .price-menu__name {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .categories {
+        margin: 16px 0 40px 0;
+    }
+
+    .filters,
+    #sorting-select {
+        width: 45%;
+    }
+
+    .filters__submenu {
+        right: -20px;
+    }
+
+    option {
+        gap: 0;
+    }
+
+    .products {
+        align-items: center;
+        justify-content: stretch;
+        gap: 16px;
+    }
+
+    .product {
+        max-height: none;
+    }
+
+    .products__link {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    .product-type__title,
+    .price__title {
+        font-size: 16px;
+    }
+
+    .product-type-menu__name,
+    .price-menu__name {
+        font-size: 12px;
+    }
+}

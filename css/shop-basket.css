@@ -1,0 +1,235 @@
+/*
+
+========
+  Main
+========
+
+*/
+
+.main {
+    background-color: var(--light-gray);
+    max-width: 1500px;
+    padding: 7rem 0;
+    margin: 0 auto;
+}
+
+.basket {
+    background-color: var(--white);
+    color: var(--dark-primary);
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+.basket__titles {
+    display: grid;
+    grid-template-columns: 70% 20% 10%;
+    border-bottom: 1px solid #dddada60;
+    padding-bottom: 16px;
+}
+
+.basket__title {
+    font-family: "Clash Display";
+}
+
+.basket__title:last-child {
+    justify-self: flex-end;
+}
+
+.basket__wrapper,
+.mobile-basket__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.basket__empty-note {
+    font-size: 20px;
+    text-align: center;
+    word-spacing: 6px;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 70% 20% 10%;
+}
+
+.product__info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.product__img {
+    width: 130px;
+    height: 100%;
+}
+
+.product__content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product__title,
+.mobile-product__title {
+    font-family: "Clash Display";
+}
+
+.product__desc,
+.mobile-product__desc {
+    font-size: 14px;
+}
+
+.product__quantity,
+.mobile-product__quantity {
+    background-color: var(--light-gray);
+    width: 55%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    button {
+        font-size: 18px;
+        color: #6654e0;
+        cursor: pointer;
+    }
+}
+
+.product__total-price {
+    justify-self: flex-end;
+}
+
+.basket__bottom {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #dddada60;
+    padding-top: 16px;
+}
+
+.basket__point,
+.mobile-basket__point {
+    font-size: 14px;
+    color: #4E4D93;
+}
+
+.basket__total-price,
+.mobile-basket__total-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    h4 {
+        color: #4E4D93;
+    }
+
+    h4,
+    h3 {
+        font-family: "Clash Display";
+    }
+}
+
+.basket__checkout-btn,
+.mobile-basket__checkout-btn {
+    background-color: var(--dark-primary);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 100ms ease-out;
+}
+
+.basket__checkout-btn {
+    width: 120%;
+    padding: 16px 0;
+    margin-top: 10px;
+    margin-left: -20%;
+}
+
+.basket__checkout-btn:hover,
+.mobile-basket__checkout-btn:hover {
+    transform: scale(1.05);
+}
+
+.mobile-basket {
+    color: var(--dark-primary);
+    display: none;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mobile-basket__title {
+    font-family: "Clash Display";
+    font-size: 24px;
+}
+
+.mobile-product {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mobile-product__img {
+    width: 40%;
+    height: 235px;
+}
+
+.mobile-product__info {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mobile-basket__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-top: 1px solid #dddada60;
+    padding-top: 16px;
+}
+
+.mobile-basket__checkout-btn {
+    width: 100%;
+    padding: 18px 0;
+    margin-top: 30px;
+}
+
+/*
+
+ -- Responsive --
+
+*/
+
+@media screen and (max-width: 768px) {
+    .basket {
+        padding: 50px 30px;
+    }
+
+    .product__quantity {
+        width: 70%;
+        padding: 6px;
+    }
+
+    .basket__point {
+        width: 44%;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .main {
+        padding: 4rem 0;
+    }
+
+    .basket {
+        display: none;
+    }
+
+    .mobile-basket {
+        display: flex;
+    }
+}
